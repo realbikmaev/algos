@@ -1,4 +1,4 @@
-fn erathostenes_sieve_iter(n: i64) -> i64 {
+pub fn problem_007(n: i64) -> i64 {
     let huge_n = (n.pow(2) + 1) as usize;
     let mut sieve = vec![true; huge_n];
     sieve[0] = false;
@@ -19,12 +19,6 @@ fn erathostenes_sieve_iter(n: i64) -> i64 {
         prime += 1;
     }
     prime
-}
-
-pub fn problem_007(n: i64) -> i64 {
-    let res = erathostenes_sieve_iter(n);
-    // print!("{res}");
-    res
 }
 
 #[cfg(test)]
