@@ -15,7 +15,7 @@ fn fib_iter(below: i64) -> impl Iterator<Item = i64> {
 
 pub fn problem_002(below: i64) -> i64 {
     let res = fib_iter(below).filter(|x| x % 2 == 0).sum();
-    print!("{res}");
+    // print!("{res}");
     res
 }
 
