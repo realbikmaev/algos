@@ -9,10 +9,10 @@ mod tests {
     use super::*;
     #[test]
     fn check_001() {
-        assert_eq!(problem_001(1000), 233168);
+        assert_eq!(problem_001(10), 23);
     }
     #[test]
     fn verify_001() {
-        assert_eq!(problem_001(10), 23);
+        assert_eq!(problem_001(1000), 233168);
     }
 }

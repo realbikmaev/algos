@@ -24,10 +24,10 @@ mod tests {
     use super::*;
     #[test]
     fn check_002() {
-        assert_eq!(problem_002(4_000_000), 4613732);
+        assert_eq!(problem_002(50), 44);
     }
     #[test]
     fn verify_002() {
-        assert_eq!(problem_002(50), 44);
+        assert_eq!(problem_002(4_000_000), 4613732);
     }
 }
