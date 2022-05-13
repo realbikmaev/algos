@@ -1,4 +1,3 @@
-// returns vec of prime factors of n
 fn prime_factors(n: i64) -> Vec<i64> {
     let mut n = n;
     let mut res = Vec::new();
