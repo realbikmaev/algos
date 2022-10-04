@@ -29,7 +29,6 @@ pub fn problem_004(n_digits: i64) -> i64 {
         .filter(|x| is_palindrome(*x))
         .max()
         .unwrap();
-    // print!("{res}");
     res
 }
 

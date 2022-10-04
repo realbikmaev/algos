@@ -1,6 +1,5 @@
 pub fn problem_001(below: i32) -> i32 {
     let res = (1..below).filter(|x| x % 3 == 0 || x % 5 == 0).sum();
-    // print!("{res}");
     res
 }
 

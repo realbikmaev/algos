@@ -16,7 +16,6 @@ pub fn problem_005(below: i64) -> i64 {
             break;
         }
     }
-    // println!("{}", n);
     n
 }
 

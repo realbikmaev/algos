@@ -18,7 +18,6 @@ fn prime_factors(n: i64) -> Vec<i64> {
 
 pub fn problem_003(n: i64) -> i64 {
     let res = prime_factors(n).iter().max().to_owned().unwrap().clone();
-    // print!("{res}");
     res
 }
 

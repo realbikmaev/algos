@@ -19,7 +19,6 @@ pub fn problem_008(n: usize) -> i64 {
             product = new_product;
         }
     }
-    // print!("{product}");
     product
 }
 
