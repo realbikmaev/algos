@@ -4,7 +4,7 @@
 ┗━━━━━━━━━━━━━┛
 ```
 
-### `ProjectEuler/Rust` tests:
+### `ProjectEuler` tests:
 
 - `check_{problem_num}` are unit-tests given in the problem text.
 
