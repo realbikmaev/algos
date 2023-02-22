@@ -4,6 +4,9 @@ struct Solution;
 
 use std::collections::HashMap;
 
+extern crate test;
+use test::Bencher;
+
 impl Solution {
     pub fn roman_to_int_fast(s: String) -> i32 {
         let mut ans = 0;
@@ -190,6 +193,16 @@ mod tests {
     #[test]
     fn check_ri_3() {
         assert_eq!(Solution::roman_to_int_fast("MCMXCIV".into()), 1994);
+    }
+
+    #[bench]
+    fn bench_ri_slow(b: &mut Bencher) {
+        b.iter(|| Solution::roman_to_int("MCMXCIV".into()))
+    }
+
+    #[bench]
+    fn bench_ri_fast(b: &mut Bencher) {
+        b.iter(|| Solution::roman_to_int_fast("MCMXCIV".into()))
     }
 
     #[test]
