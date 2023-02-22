@@ -1,11 +1,4 @@
-fn is_divisible_by_all(n: i64, divisors: &[i64]) -> bool {
-    for d in divisors {
-        if n % d != 0 {
-            return false;
-        }
-    }
-    true
-}
+use crate::utils::is_divisible_by_all;
 
 pub fn problem_005(below: i64) -> i64 {
     let primes: Vec<i64> = (2..below).collect();

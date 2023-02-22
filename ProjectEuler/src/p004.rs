@@ -1,32 +1,29 @@
-use gen_iter::gen_iter;
+use crate::utils::is_palindrome_int;
 
-fn is_palindrome(n: i64) -> bool {
-    let s = n
-        .to_string()
-        .chars()
-        .into_iter()
-        .rev()
-        .collect::<String>()
-        .parse::<i64>()
-        .unwrap();
-    s == n
-}
-
-fn two_mul_iter(n_digits: i64) -> impl Iterator<Item = i64> {
-    gen_iter!(move {
-        let lo = 10_i64.pow((n_digits - 1) as u32);
-        let hi = lo * 10_i64;
-        for i in lo..hi {
-            for j in i..hi {
-                yield i * j;
-            }
+fn two_mul(n_digits: i64) -> impl Iterator<Item = i64> {
+    let lo = 10i64.pow((n_digits - 1) as u32);
+    let hi = lo * 10_i64;
+    let mut i = 0;
+    let mut j = 0;
+    std::iter::from_fn(move || {
+        let res: i64 = i * j;
+        if j < hi {
+            j += 1;
         }
+        if j == hi {
+            i += 1;
+            j = i;
+        }
+        if i == hi {
+            return None;
+        }
+        Some(res)
     })
 }
 
 pub fn problem_004(n_digits: i64) -> i64 {
-    let res = two_mul_iter(n_digits)
-        .filter(|x| is_palindrome(*x))
+    let res = two_mul(n_digits)
+        .filter(|x| is_palindrome_int(*x))
         .max()
         .unwrap();
     res

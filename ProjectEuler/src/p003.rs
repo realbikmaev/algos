@@ -1,23 +1,7 @@
-fn prime_factors(n: i64) -> Vec<i64> {
-    let mut n = n;
-    let mut res = Vec::new();
-    let mut i = 2;
-    while i * i <= n {
-        if n % i == 0 {
-            res.push(i);
-            n /= i;
-        } else {
-            i += 1;
-        }
-    }
-    if n > 1 {
-        res.push(n);
-    }
-    res
-}
+use crate::utils::prime_factors_of;
 
 pub fn problem_003(n: i64) -> i64 {
-    let res = prime_factors(n).iter().max().to_owned().unwrap().clone();
+    let res = prime_factors_of(n).iter().max().to_owned().unwrap().clone();
     res
 }
 
