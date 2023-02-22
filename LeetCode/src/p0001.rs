@@ -1,7 +1,9 @@
 // 1. Two Sum
 
-use std::collections::HashMap;
 struct Solution;
+
+use std::collections::HashMap;
+
 impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         let mut map = HashMap::new();
@@ -12,7 +14,7 @@ impl Solution {
             }
             map.insert(num1, i as i32);
         }
-        return vec![];
+        vec![]
     }
 }
 
